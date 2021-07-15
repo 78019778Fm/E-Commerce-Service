@@ -27,4 +27,14 @@ public class UsuarioService {
             return new GenericResponse<Usuario>(TIPO_AUTH, RPTA_WARNING, "Lo sentimos, ese usuario no existe", new Usuario());
         }
     }
+    //Método para guardar credenciales del usuario
+    public GenericResponse guardarUsuario(Usuario u){
+        Optional<Usuario> optU = this.repository.findById(u.getId());
+        int idf = optU.isPresent() ? optU.get().getId() : 0;
+        if(idf == 0){
+            return new GenericResponse(TIPO_DATA, RPTA_OK, "Usuario Registrado Correctamente", this.repository.save(u));
+        }else{
+            return new GenericResponse(TIPO_DATA, RPTA_OK, "Datos del usuario actualizados", this.repository.save(u));
+        }
+    }
 }

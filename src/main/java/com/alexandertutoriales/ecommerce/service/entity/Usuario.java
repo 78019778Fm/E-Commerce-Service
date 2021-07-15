@@ -7,7 +7,7 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(length = 20)
+    @Column(length = 500)
     private String email;
     @Column(length = 20)
     private String clave;

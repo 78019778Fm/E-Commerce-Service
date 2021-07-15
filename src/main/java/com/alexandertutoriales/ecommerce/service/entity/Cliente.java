@@ -10,7 +10,9 @@ public class Cliente {
     @Column(length = 100)
     private String nombres;
     @Column(length = 100)
-    private String apellidos;
+    private String apellidoPaterno;
+    @Column(length = 100)
+    private String apellidoMaterno;
     @Column(length = 20)
     private String tipoDoc;
     @Column(length = 11)
@@ -40,14 +42,6 @@ public class Cliente {
 
     public void setNombres(String nombres) {
         this.nombres = nombres;
-    }
-
-    public String getApellidos() {
-        return apellidos;
-    }
-
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
     }
 
     public String getTipoDoc() {
@@ -104,5 +98,21 @@ public class Cliente {
 
     public void setFoto(DocumentoAlmacenado foto) {
         this.foto = foto;
+    }
+
+    public String getApellidoPaterno() {
+        return apellidoPaterno;
+    }
+
+    public void setApellidoPaterno(String apellidoPaterno) {
+        this.apellidoPaterno = apellidoPaterno;
+    }
+
+    public String getApellidoMaterno() {
+        return apellidoMaterno;
+    }
+
+    public void setApellidoMaterno(String apellidoMaterno) {
+        this.apellidoMaterno = apellidoMaterno;
     }
 }

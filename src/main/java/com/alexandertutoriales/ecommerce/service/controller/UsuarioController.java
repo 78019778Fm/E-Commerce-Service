@@ -3,9 +3,7 @@ package com.alexandertutoriales.ecommerce.service.controller;
 import com.alexandertutoriales.ecommerce.service.entity.Usuario;
 import com.alexandertutoriales.ecommerce.service.service.UsuarioService;
 import com.alexandertutoriales.ecommerce.service.utlis.GenericResponse;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -22,5 +20,13 @@ public class UsuarioController {
         String email = request.getParameter("email");
         String contrasenia = request.getParameter("pass");
         return this.service.login(email, contrasenia);
+    }
+    @PostMapping
+    public GenericResponse save(@RequestBody Usuario u){
+        return this.service.guardarUsuario(u);
+    }
+    @PutMapping("/{id}")
+    public GenericResponse update(@PathVariable int id, @RequestBody Usuario u){
+        return this.service.guardarUsuario(u);
     }
 }
