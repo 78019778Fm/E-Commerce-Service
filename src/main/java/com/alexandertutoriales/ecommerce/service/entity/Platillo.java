@@ -21,6 +21,8 @@ public class Platillo {
     private Categoria categoria;
     @Column
     private boolean vigencia;
+    @Column
+    private boolean recomendado;
 
     public int getId() {
         return id;
@@ -84,5 +86,13 @@ public class Platillo {
 
     public void setVigencia(boolean vigencia) {
         this.vigencia = vigencia;
+    }
+
+    public boolean isRecomendado() {
+        return recomendado;
+    }
+
+    public void setRecomendado(boolean recomendado) {
+        this.recomendado = recomendado;
     }
 }
