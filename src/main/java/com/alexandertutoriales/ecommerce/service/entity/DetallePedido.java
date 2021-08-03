@@ -11,9 +11,9 @@ public class DetallePedido {
     private int cantidad;
     @Column
     private Double precio;
-    @OneToOne
+    @ManyToOne
     private Platillo platillo;
-    @OneToOne
+    @ManyToOne
     private Pedido pedido;
 
     public int getId() {
