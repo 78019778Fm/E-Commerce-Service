@@ -32,7 +32,6 @@ public class PedidoService {
         this.pRepository = pRepository;
     }
 
-
     //Método para devolver los pedidos con su respectivo detalle
     public GenericResponse<List<PedidoConDetallesDTO>> devolverMisCompras(int idCli) {
         final List<PedidoConDetallesDTO> dtos = new ArrayList<>();
