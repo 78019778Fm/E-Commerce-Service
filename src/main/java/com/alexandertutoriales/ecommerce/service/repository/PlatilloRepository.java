@@ -14,5 +14,9 @@ public interface PlatilloRepository extends CrudRepository<Platillo, Integer> {
 
     @Modifying
     @Query("UPDATE Platillo P SET P.stock=stock-:cant WHERE P.id=:id")
-    void actualizarStock(int cant, int id);
+    void descontarStock(int cant, int id);
+
+    @Modifying
+    @Query("UPDATE Platillo P SET P.stock=stock+:cant WHERE P.id=:id")
+    void aumentarStock(int cant, int id);
 }

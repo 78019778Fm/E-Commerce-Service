@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-08-2021 a las 20:15:27
+-- Tiempo de generación: 15-08-2021 a las 07:12:51
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 8.0.3
 
@@ -89,19 +89,6 @@ CREATE TABLE `detalle_pedido` (
   `platillo_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `detalle_pedido`
---
-
-INSERT INTO `detalle_pedido` (`id`, `cantidad`, `precio`, `pedido_id`, `platillo_id`) VALUES
-(1, 1, 15, 1, 1),
-(2, 1, 20, 1, 2),
-(3, 1, 12, 4, 4),
-(4, 1, 25, 4, 5),
-(5, 2, 15, 5, 1),
-(6, 4, 20, 5, 2),
-(7, 2, 12, 5, 4);
-
 -- --------------------------------------------------------
 
 --
@@ -158,15 +145,6 @@ CREATE TABLE `pedido` (
   `cliente_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `pedido`
---
-
-INSERT INTO `pedido` (`id`, `anular_pedido`, `fecha_compra`, `monto`, `cliente_id`) VALUES
-(1, b'1', '2021-08-03 16:29:22', 35, 1),
-(4, b'1', '2021-08-03 10:49:24', 37, 2),
-(5, b'0', '2021-08-08 13:06:28', 134, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -190,13 +168,13 @@ CREATE TABLE `platillo` (
 --
 
 INSERT INTO `platillo` (`id`, `descripcion_platillo`, `nombre`, `precio`, `stock`, `vigencia`, `categoria_id`, `foto_id`, `recomendado`) VALUES
-(1, 'Es un sabroso plato muy popular en Perú que se prepara con arroz frito, diversas carnes, verduras y salsa de soja. Posiblemente es uno de los platos más consumidos en la gastronomía peruana por su fácil elaboración y su rico sabor. Hay muchas variedades ya que puede prepararse con pollo, carne de ternera, huevo o salchicha.', 'Arroz Chaufa', 15, 97, b'1', 2, 10, b'1'),
-(2, 'El arroz con pollo es un plato típico de América Latina y España 1​ con variaciones regionales según el país. Consiste en arroz cocinado con pollo, en presas o desmechado, verduras (ají pimentón, zanahoria en cubos, apio, habichuelas, cebolla, maíz desgranado, aceitunas, arvejas, alcaparras), y sazonado con especias (laurel, tomillo, cilantro, ajo)', 'Arroz con Pollo', 20, 45, b'1', 2, 15, b'1'),
+(1, 'Es un sabroso plato muy popular en Perú que se prepara con arroz frito, diversas carnes, verduras y salsa de soja. Posiblemente es uno de los platos más consumidos en la gastronomía peruana por su fácil elaboración y su rico sabor. Hay muchas variedades ya que puede prepararse con pollo, carne de ternera, huevo o salchicha.', 'Arroz Chaufa', 15, 50, b'1', 2, 10, b'1'),
+(2, 'El arroz con pollo es un plato típico de América Latina y España 1​ con variaciones regionales según el país. Consiste en arroz cocinado con pollo, en presas o desmechado, verduras (ají pimentón, zanahoria en cubos, apio, habichuelas, cebolla, maíz desgranado, aceitunas, arvejas, alcaparras), y sazonado con especias (laurel, tomillo, cilantro, ajo)', 'Arroz con Pollo', 20, 50, b'1', 2, 15, b'1'),
 (3, 'Los Tallarines rojos con pollo es un plato de fondo que se come mucho en el Perú. Este plato es una fusión de la comida peruana e italiana, ya que se origina en el spaghetti ala bolognese.', 'Tallarines Rojos', 6, 50, b'1', 1, 16, b'1'),
-(4, 'Una de las comidas de la costar que suele acompañar los platos de carne, se tratan de unos tallarines a base de leche evaporada, espinaca, nueces pecanas, albahaca y parmesano. Todos estos ingredientes forman la característica salsa verde.', 'Tallarines Verdes', 12, 47, b'1', 1, 21, b'1'),
-(5, 'Como su nombre indica, el arroz con pato es un plato de arroz, picante y ácido, cuyos ingredientes principales son el pato, macerado en ajo y vinagre, ají amarillo que le da el picor y un arroz verdoso gracias al culantro que se añade.​ Es común añadir en la cocción una cantidad al gusto de cerveza negra o de chicha de jora.​ Se sirve acompañado con salsa criolla. Existen variantes que remplazan el culantro por palillo, para darle un color amarillo.', 'Arroz con Pato', 25, 59, b'1', 2, 1, b'1'),
+(4, 'Una de las comidas de la costar que suele acompañar los platos de carne, se tratan de unos tallarines a base de leche evaporada, espinaca, nueces pecanas, albahaca y parmesano. Todos estos ingredientes forman la característica salsa verde.', 'Tallarines Verdes', 12, 50, b'1', 1, 21, b'1'),
+(5, 'Como su nombre indica, el arroz con pato es un plato de arroz, picante y ácido, cuyos ingredientes principales son el pato, macerado en ajo y vinagre, ají amarillo que le da el picor y un arroz verdoso gracias al culantro que se añade.​ Es común añadir en la cocción una cantidad al gusto de cerveza negra o de chicha de jora.​ Se sirve acompañado con salsa criolla. Existen variantes que remplazan el culantro por palillo, para darle un color amarillo.', 'Arroz con Pato', 25, 50, b'1', 2, 1, b'1'),
 (6, 'El siguiente plato se sirve con una base de arroz blanco y papas, se prepara un sofrito con ají amarillo, ajo, pan, cebolla y parmesano, se le añade la gallina hervida desmenuzada y nueces molidas. Listo para servir.', 'Ají de Gallina', 18, 50, b'1', 2, 13, b'1'),
-(7, 'Uno de los platos típicos de la costa, también conocido como guiso de auyama o de calabaza. Básicamente se trata de un locro de zapallo y papa, acompañado de maíz, cebolla, ajo, guisantes, sazonado con orégano y sal al gusto, y aceite. Es un plato que suele acompañarse con arroz.', 'Locro de Zapallo', 25, 200, b'1', 2, 14, b'1');
+(7, 'Uno de los platos típicos de la costa, también conocido como guiso de auyama o de calabaza. Básicamente se trata de un locro de zapallo y papa, acompañado de maíz, cebolla, ajo, guisantes, sazonado con orégano y sal al gusto, y aceite. Es un plato que suele acompañarse con arroz.', 'Locro de Zapallo', 25, 50, b'1', 2, 14, b'1');
 
 -- --------------------------------------------------------
 
@@ -297,7 +275,7 @@ ALTER TABLE `cliente`
 -- AUTO_INCREMENT de la tabla `detalle_pedido`
 --
 ALTER TABLE `detalle_pedido`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `documento_almacenado`
@@ -309,7 +287,7 @@ ALTER TABLE `documento_almacenado`
 -- AUTO_INCREMENT de la tabla `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `platillo`

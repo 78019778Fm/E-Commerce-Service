@@ -52,7 +52,7 @@ public class PedidoService {
         this.repository.save(dto.getPedido());
         for (DetallePedido dp : dto.getDetallePedidos()) {
             dp.setPedido(dto.getPedido());
-            this.pRepository.actualizarStock(dp.getCantidad(), dp.getPlatillo().getId());
+            this.pRepository.descontarStock(dp.getCantidad(), dp.getPlatillo().getId());
         }
         //Llamamos al DetallePedidoService
         this.dpService.guardarDetalles(dto.getDetallePedidos());
@@ -64,10 +64,17 @@ public class PedidoService {
         Pedido p = this.repository.findById(id).orElse(new Pedido());
         if(p.getId() != 0){
             p.setAnularPedido(true);
+            this.restablecerStock(id);
             this.repository.save(p);
             return new GenericResponse(TIPO_DATA, RPTA_OK, OPERACION_CORRECTA, p);
         }else{
             return new GenericResponse(TIPO_DATA, RPTA_OK, OPERACION_ERRONEA, "El pedido que desea anular no es válido");
+        }
+    }
+    private void restablecerStock(final int pedidoId) {
+        Iterable<DetallePedido> detalles = this.detallePedidoRepository.findByPedido(pedidoId);
+        for (DetallePedido dp : detalles) {
+            pRepository.aumentarStock(dp.getCantidad(), dp.getPlatillo().getId());
         }
     }
 }
