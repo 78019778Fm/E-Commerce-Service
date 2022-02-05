@@ -55,4 +55,13 @@ public class DetallePedido {
     public void setPedido(Pedido pedido) {
         this.pedido = pedido;
     }
+
+    public String getNombre(){
+        return this.platillo!= null ? this.platillo.getNombre() : "----";
+    }
+
+    public Double getSubTotal(){
+        return this.cantidad * this.precio;
+    }
+
 }

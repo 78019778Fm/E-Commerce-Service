@@ -4,6 +4,8 @@ import com.alexandertutoriales.ecommerce.service.entity.dto.GenerarPedidoDTO;
 import com.alexandertutoriales.ecommerce.service.entity.dto.PedidoConDetallesDTO;
 import com.alexandertutoriales.ecommerce.service.service.PedidoService;
 import com.alexandertutoriales.ecommerce.service.utlis.GenericResponse;
+import org.springframework.core.io.Resource;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,5 +32,10 @@ public class PedidoController {
     @DeleteMapping("/{id}")
     public GenericResponse anularPedido(@PathVariable int id){
         return this.service.anularPedido(id);
+    }
+    //EXPORTAR PDF DE ORDEN
+    @GetMapping("exportInvoice")
+    public ResponseEntity<Resource> exportInvoice(@RequestParam int idCli, @RequestParam int idOrden){
+        return this.service.exportInvoice(idCli, idOrden);
     }
 }
