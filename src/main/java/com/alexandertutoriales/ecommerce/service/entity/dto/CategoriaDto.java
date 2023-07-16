@@ -1,21 +1,10 @@
-package com.alexandertutoriales.ecommerce.service.entity;
+package com.alexandertutoriales.ecommerce.service.entity.dto;
 
-import javax.persistence.*;
-
-@Entity
-public class Categoria {
-    public static final String C_NOMBRE = "nombre";
-    public static final String C_VIGENCIA = "vigencia";
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class CategoriaDto {
     private int id;
-    @Column(length = 100)
     private String nombre;
-    @Column
     private boolean vigencia;
-    @OneToOne
-    private DocumentoAlmacenado foto;
+    private DocumentoAlmacenadoDto foto;
 
     public int getId() {
         return id;
@@ -41,11 +30,11 @@ public class Categoria {
         this.vigencia = vigencia;
     }
 
-    public DocumentoAlmacenado getFoto() {
+    public DocumentoAlmacenadoDto getFoto() {
         return foto;
     }
 
-    public void setFoto(DocumentoAlmacenado foto) {
+    public void setFoto(DocumentoAlmacenadoDto foto) {
         this.foto = foto;
     }
 }
