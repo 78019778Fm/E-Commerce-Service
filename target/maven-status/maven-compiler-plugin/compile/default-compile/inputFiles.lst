@@ -8,6 +8,7 @@ C:\dev\Software_Desarrollo\E-Commerce-Service\src\main\java\com\alexandertutoria
 C:\dev\Software_Desarrollo\E-Commerce-Service\src\main\java\com\alexandertutoriales\ecommerce\service\service\DocumentoAlmacenadoService.java
 C:\dev\Software_Desarrollo\E-Commerce-Service\src\main\java\com\alexandertutoriales\ecommerce\service\exception\SpecificExceptionHandler.java
 C:\dev\Software_Desarrollo\E-Commerce-Service\src\main\java\com\alexandertutoriales\ecommerce\service\repository\PlatilloRepository.java
+C:\dev\Software_Desarrollo\E-Commerce-Service\src\main\java\com\alexandertutoriales\ecommerce\service\specImpl\CategoriaSpecImpl.java
 C:\dev\Software_Desarrollo\E-Commerce-Service\src\main\java\com\alexandertutoriales\ecommerce\service\entity\dto\GenerarPedidoDTO.java
 C:\dev\Software_Desarrollo\E-Commerce-Service\src\main\java\com\alexandertutoriales\ecommerce\service\exception\MyFileNotFoundException.java
 C:\dev\Software_Desarrollo\E-Commerce-Service\src\main\java\com\alexandertutoriales\ecommerce\service\controller\CategoriaController.java
@@ -21,6 +22,7 @@ C:\dev\Software_Desarrollo\E-Commerce-Service\src\main\java\com\alexandertutoria
 C:\dev\Software_Desarrollo\E-Commerce-Service\src\main\java\com\alexandertutoriales\ecommerce\service\controller\PlatilloController.java
 C:\dev\Software_Desarrollo\E-Commerce-Service\src\main\java\com\alexandertutoriales\ecommerce\service\service\PedidoService.java
 C:\dev\Software_Desarrollo\E-Commerce-Service\src\main\java\com\alexandertutoriales\ecommerce\service\entity\dto\CategoriaDto.java
+C:\dev\Software_Desarrollo\E-Commerce-Service\src\main\java\com\alexandertutoriales\ecommerce\service\specImpl\AbstractSpec.java
 C:\dev\Software_Desarrollo\E-Commerce-Service\src\main\java\com\alexandertutoriales\ecommerce\service\service\FileStorageService.java
 C:\dev\Software_Desarrollo\E-Commerce-Service\src\main\java\com\alexandertutoriales\ecommerce\service\service\DetallePedidoService.java
 C:\dev\Software_Desarrollo\E-Commerce-Service\src\main\java\com\alexandertutoriales\ecommerce\service\controller\PedidoController.java
@@ -28,6 +30,7 @@ C:\dev\Software_Desarrollo\E-Commerce-Service\src\main\java\com\alexandertutoria
 C:\dev\Software_Desarrollo\E-Commerce-Service\src\main\java\com\alexandertutoriales\ecommerce\service\exception\GenericExceptionHandler.java
 C:\dev\Software_Desarrollo\E-Commerce-Service\src\main\java\com\alexandertutoriales\ecommerce\service\service\CategoriaService.java
 C:\dev\Software_Desarrollo\E-Commerce-Service\src\main\java\com\alexandertutoriales\ecommerce\service\service\ClienteService.java
+C:\dev\Software_Desarrollo\E-Commerce-Service\src\main\java\com\alexandertutoriales\ecommerce\service\spec\CategoriaSpec.java
 C:\dev\Software_Desarrollo\E-Commerce-Service\src\main\java\com\alexandertutoriales\ecommerce\service\exception\FileStorageException.java
 C:\dev\Software_Desarrollo\E-Commerce-Service\src\main\java\com\alexandertutoriales\ecommerce\service\repository\UsuarioRepository.java
 C:\dev\Software_Desarrollo\E-Commerce-Service\src\main\java\com\alexandertutoriales\ecommerce\service\entity\Cliente.java
@@ -37,6 +40,7 @@ C:\dev\Software_Desarrollo\E-Commerce-Service\src\main\java\com\alexandertutoria
 C:\dev\Software_Desarrollo\E-Commerce-Service\src\main\java\com\alexandertutoriales\ecommerce\service\repository\DocumentoAlmacenadoRepository.java
 C:\dev\Software_Desarrollo\E-Commerce-Service\src\main\java\com\alexandertutoriales\ecommerce\service\entity\Usuario.java
 C:\dev\Software_Desarrollo\E-Commerce-Service\src\main\java\com\alexandertutoriales\ecommerce\service\service\UsuarioService.java
+C:\dev\Software_Desarrollo\E-Commerce-Service\src\main\java\com\alexandertutoriales\ecommerce\service\entity\filters\CategoriaFilter.java
 C:\dev\Software_Desarrollo\E-Commerce-Service\src\main\java\com\alexandertutoriales\ecommerce\service\entity\Pedido.java
 C:\dev\Software_Desarrollo\E-Commerce-Service\src\main\java\com\alexandertutoriales\ecommerce\service\mapperImpl\GenericMapper.java
 C:\dev\Software_Desarrollo\E-Commerce-Service\src\main\java\com\alexandertutoriales\ecommerce\service\controller\ClienteController.java

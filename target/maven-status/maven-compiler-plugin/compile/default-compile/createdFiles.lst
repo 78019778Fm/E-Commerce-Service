@@ -7,6 +7,7 @@ com\alexandertutoriales\ecommerce\service\entity\Usuario.class
 com\alexandertutoriales\ecommerce\service\entity\Pedido.class
 com\alexandertutoriales\ecommerce\service\controller\ClienteController.class
 com\alexandertutoriales\ecommerce\service\service\CategoriaService.class
+com\alexandertutoriales\ecommerce\service\entity\filters\CategoriaFilter.class
 com\alexandertutoriales\ecommerce\service\exception\FileStorageException.class
 com\alexandertutoriales\ecommerce\service\service\FileStorageService.class
 com\alexandertutoriales\ecommerce\service\entity\dto\DocumentoAlmacenadoDto.class
@@ -19,6 +20,7 @@ com\alexandertutoriales\ecommerce\service\utlis\GenericResponse.class
 com\alexandertutoriales\ecommerce\service\utlis\Global$Estado.class
 com\alexandertutoriales\ecommerce\service\entity\DocumentoAlmacenado.class
 com\alexandertutoriales\ecommerce\service\controller\PedidoController.class
+com\alexandertutoriales\ecommerce\service\specImpl\CategoriaSpecImpl.class
 com\alexandertutoriales\ecommerce\service\repository\DetallePedidoRepository.class
 com\alexandertutoriales\ecommerce\service\entity\dto\PedidoConDetallesDTO.class
 com\alexandertutoriales\ecommerce\service\App.class
@@ -35,11 +37,13 @@ com\alexandertutoriales\ecommerce\service\mapper\CategoriaMapper.class
 com\alexandertutoriales\ecommerce\service\service\DetallePedidoService.class
 com\alexandertutoriales\ecommerce\service\entity\Platillo.class
 com\alexandertutoriales\ecommerce\service\service\PedidoService.class
+com\alexandertutoriales\ecommerce\service\spec\CategoriaSpec.class
 com\alexandertutoriales\ecommerce\service\entity\dto\CategoriaDto.class
 com\alexandertutoriales\ecommerce\service\exception\GenericExceptionHandler.class
 com\alexandertutoriales\ecommerce\service\service\ClienteService.class
 com\alexandertutoriales\ecommerce\service\entity\DetallePedido.class
 com\alexandertutoriales\ecommerce\service\repository\ClienteRepository.class
+com\alexandertutoriales\ecommerce\service\specImpl\AbstractSpec.class
 com\alexandertutoriales\ecommerce\service\repository\DocumentoAlmacenadoRepository.class
 com\alexandertutoriales\ecommerce\service\repository\PedidoRepository.class
 com\alexandertutoriales\ecommerce\service\repository\UsuarioRepository.class

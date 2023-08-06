@@ -5,6 +5,7 @@ public class CategoriaDto {
     private String nombre;
     private boolean vigencia;
     private DocumentoAlmacenadoDto foto;
+    private String vigenciaString;
 
     public int getId() {
         return id;
@@ -36,5 +37,13 @@ public class CategoriaDto {
 
     public void setFoto(DocumentoAlmacenadoDto foto) {
         this.foto = foto;
+    }
+
+    public String getVigenciaString() {
+        return vigenciaString;
+    }
+
+    public void setVigenciaString(String vigenciaString) {
+        this.vigenciaString = vigenciaString;
     }
 }

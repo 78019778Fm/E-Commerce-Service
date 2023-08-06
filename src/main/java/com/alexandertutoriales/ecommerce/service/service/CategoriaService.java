@@ -47,6 +47,16 @@ public class CategoriaService {
             page = PageRequest.of(page.getPageNumber(), page.getPageSize(), sort);
         }
         Page<Categoria> lista = repository.findAll(spec.filtrar(filter), page);
-        return mapper.toDto(lista);
+        Page<Categoria> listaOk = setCategoriaString(lista);
+        return mapper.toDto(listaOk);
+    }
+
+    private Page<Categoria> setCategoriaString(Page<Categoria> listaCategoria) {
+        if (listaCategoria != null) {
+            for (Categoria listaCate : listaCategoria) {
+                listaCate.setVigenciaString(listaCate.isVigencia() ? "Activo" : "Inactivo");
+            }
+        }
+        return listaCategoria;
     }
 }

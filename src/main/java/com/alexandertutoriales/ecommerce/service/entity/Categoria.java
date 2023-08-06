@@ -16,6 +16,8 @@ public class Categoria {
     private boolean vigencia;
     @OneToOne
     private DocumentoAlmacenado foto;
+    @Transient
+    private String vigenciaString;
 
     public int getId() {
         return id;
@@ -47,5 +49,13 @@ public class Categoria {
 
     public void setFoto(DocumentoAlmacenado foto) {
         this.foto = foto;
+    }
+
+    public String getVigenciaString() {
+        return vigenciaString;
+    }
+
+    public void setVigenciaString(String vigenciaString) {
+        this.vigenciaString = vigenciaString;
     }
 }
