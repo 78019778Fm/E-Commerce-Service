@@ -59,4 +59,10 @@ public class CategoriaService {
         }
         return listaCategoria;
     }
+
+    public Integer save(CategoriaDto categoriaDto) {
+        Categoria categoria = mapper.toEntity(categoriaDto);
+        Categoria categoriaGuardada = repository.save(categoria);
+        return categoriaGuardada.getId();
+    }
 }
