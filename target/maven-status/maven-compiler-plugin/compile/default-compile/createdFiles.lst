@@ -34,6 +34,7 @@ com\alexandertutoriales\ecommerce\service\exception\MyFileNotFoundException.clas
 com\alexandertutoriales\ecommerce\service\mapper\DocumentoAlmacenadoMapper.class
 com\alexandertutoriales\ecommerce\service\mapper\DocumentoAlmacenadoMapperImpl.class
 com\alexandertutoriales\ecommerce\service\mapper\CategoriaMapper.class
+com\alexandertutoriales\ecommerce\service\exception\UnprocessableEntityException.class
 com\alexandertutoriales\ecommerce\service\service\DetallePedidoService.class
 com\alexandertutoriales\ecommerce\service\entity\Platillo.class
 com\alexandertutoriales\ecommerce\service\service\PedidoService.class
