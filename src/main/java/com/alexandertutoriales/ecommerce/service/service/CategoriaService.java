@@ -65,4 +65,8 @@ public class CategoriaService {
         Categoria categoriaGuardada = repository.save(categoria);
         return categoriaGuardada.getId();
     }
+
+    public CategoriaDto findCategoriaById(int id) {
+        return mapper.toDto(repository.findById(id));
+    }
 }

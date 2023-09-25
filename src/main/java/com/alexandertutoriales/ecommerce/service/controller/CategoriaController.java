@@ -33,6 +33,12 @@ public class CategoriaController {
         return ResponseEntity.ok(this.service.findAll(pageRequest, filter));
     }
 
+    @GetMapping("/getById/{id}")
+    public ResponseEntity<CategoriaDto> getCategoriaById(@PathVariable(required = true) int id) {
+        CategoriaDto categoriaDto = this.service.findCategoriaById(id);
+        return ResponseEntity.ok(categoriaDto);
+    }
+
     @PostMapping
     public ResponseEntity<Integer> create(@Valid @RequestBody CategoriaDto categoriaDto) {
         if(categoriaDto.getId() != null) {
