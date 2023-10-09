@@ -46,4 +46,9 @@ public class DocumentoAlmacenadoController {
         obj.setId(id);
         return service.save(obj);
     }
+
+    @DeleteMapping("/deleteImage/{id}")
+    public GenericResponse delete(@PathVariable Long id) {
+        return service.deleteById(id);
+    }
 }

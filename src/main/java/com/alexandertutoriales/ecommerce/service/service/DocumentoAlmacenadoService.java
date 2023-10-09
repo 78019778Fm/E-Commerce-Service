@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Optional;
 
 import static com.alexandertutoriales.ecommerce.service.utlis.Global.*;
 
@@ -77,12 +78,23 @@ public class DocumentoAlmacenadoService {
         return download(doc.getCompleteFileName(), request);
     }
 
-
-    public GenericResponse delete(Long aLong) {
+    public HashMap<String, Object> validate(DocumentoAlmacenado obj) {
         return null;
     }
 
-    public HashMap<String, Object> validate(DocumentoAlmacenado obj) {
-        return null;
+    public GenericResponse deleteById(Long id) {
+        boolean deleted = false;
+        Optional<DocumentoAlmacenado> documentoAlmacenado = repo.findById(id);
+        if (documentoAlmacenado.isPresent()) {
+            deleted = storageService.deleteFile(documentoAlmacenado.get().getCompleteFileName());
+            int deletedFromBD = repo.deleteImageById(documentoAlmacenado.get().getId());
+            if (deletedFromBD == 1 && deleted) {
+                return new GenericResponse(TIPO_DATA, RPTA_OK, OPERACION_CORRECTA, deleted);
+            } else {
+                return new GenericResponse(TIPO_DATA, RPTA_WARNING, OPERACION_ERRONEA, deleted);
+            }
+        } else {
+            return new GenericResponse(TIPO_DATA, RPTA_ERROR, "No se ha encontrado ningún documento almacenado con ese Id", deleted);
+        }
     }
 }

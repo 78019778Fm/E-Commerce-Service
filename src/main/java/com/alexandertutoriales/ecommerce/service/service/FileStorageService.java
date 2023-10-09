@@ -74,6 +74,18 @@ public class FileStorageService {
             throw new MyFileNotFoundException("Ha ocurrido un error al intentar acceder al archivo: " + completeFileName, e);
         }
     }
+
+    public boolean deleteFile(String completeFileName) {
+        boolean deleted = false;
+        Path targetLocation = getFileStorageLocation(getFolderName(completeFileName)).resolve(completeFileName).normalize();
+        try {
+            Files.deleteIfExists(targetLocation);
+            deleted = true;
+        } catch (IOException e) {
+            throw new FileStorageException("No se pudo eliminar el archivo anterior", e);
+        }
+        return deleted;
+    }
 }
 
 

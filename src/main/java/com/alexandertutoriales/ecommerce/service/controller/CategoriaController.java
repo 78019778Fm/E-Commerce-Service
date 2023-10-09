@@ -41,11 +41,40 @@ public class CategoriaController {
 
     @PostMapping
     public ResponseEntity<Integer> create(@Valid @RequestBody CategoriaDto categoriaDto) {
-        if(categoriaDto.getId() != null) {
+        if (categoriaDto.getId() != null) {
             throw new UnprocessableEntityException();
         }
         Integer id = this.service.save(categoriaDto);
         return ResponseEntity.status(HttpStatus.CREATED).body(id);
 
+    }
+
+    @PutMapping(value = "/{categoriaInfo}")
+    public ResponseEntity<Integer> update(@PathVariable(value = "categoriaInfo") Integer id,
+                                          @Valid @RequestBody CategoriaDto categoriaDto) {
+        categoriaDto.setId(id);
+        Integer categoriaid = this.service.save(categoriaDto);
+        return ResponseEntity.ok(categoriaid);
+    }
+
+    @DeleteMapping("/deleteCategoria/{categoriaId}")
+    public ResponseEntity<Void> deleteCategoria(@Valid @PathVariable Integer categoriaId) {
+        if (categoriaId == null) {
+            throw new UnprocessableEntityException();
+        }
+        this.service.deleteCategoriaById(categoriaId);
+        return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/desactivar/{id}")
+    public ResponseEntity<Void> desactivar(@PathVariable(required = false) Integer id) {
+        this.service.desactivar(id);
+        return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/activar/{id}")
+    public ResponseEntity<Void> activar(@PathVariable(required = false) Integer id) {
+        this.service.activar(id);
+        return ResponseEntity.ok().build();
     }
 }

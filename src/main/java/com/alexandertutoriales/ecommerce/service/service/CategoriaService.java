@@ -69,4 +69,16 @@ public class CategoriaService {
     public CategoriaDto findCategoriaById(int id) {
         return mapper.toDto(repository.findById(id));
     }
+
+    public void deleteCategoriaById(int id){
+        repository.deleteById(id);
+    }
+
+    public void activar(Integer id) {
+        repository.activar(id);
+    }
+
+    public void desactivar(Integer id) {
+        repository.desactivar(id);
+    }
 }
